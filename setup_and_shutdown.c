@@ -45,9 +45,9 @@ void sleep(void) {
 
     /*
      * The SLEEP instruction essentially halts all execution until a reset or one of a few
-     * criteria are met (see specsheet). For our purposes it's functionally just a  convenient
-     * way to stop the programme restarting by the PC looping back around to the start of the
-     * memory, that has the added bonus of drawing less power than an infinite loop.
+     * criteria are met (see specsheet). For our purposes it's functionally just a convenient
+     * way to prevent the programme restarting due to the PC looping back around to the start 
+     * of the memory, that has the added bonus of drawing less power than an infinite loop.
     */ 
 #asm
     SLEEP; // Send the little PIC to its comfy little bed after its hard day's work
