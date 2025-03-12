@@ -7,6 +7,8 @@
       <itemPath>types.h</itemPath>
       <itemPath>setup_and_shutdown.h</itemPath>
       <itemPath>led.h</itemPath>
+      <itemPath>sensing.h</itemPath>
+      <itemPath>i2c.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -23,6 +25,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>setup_and_shutdown.c</itemPath>
       <itemPath>led.c</itemPath>
+      <itemPath>sensing.c</itemPath>
+      <itemPath>i2c.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

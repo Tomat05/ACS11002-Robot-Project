@@ -13,6 +13,7 @@
 void setup_io(void);
 void setup_pwm(void);
 void setup_adc(void);
+void setup_i2c(void);
 void sleep(void);
 
 #endif	/* SETUP_AND_SHUTDOWN_H */

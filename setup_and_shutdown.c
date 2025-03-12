@@ -39,6 +39,18 @@ void setup_adc(void) {
     ADCON0bits.ADON = 1; // Turn on ADC
 }
 
+void setup_i2c(void) {
+    SSPCON1.SSPM = 0b1000;
+    SSPCON1.CKM = 0b0;
+    SSPCON1.SSPEN = 0b1;
+    SSPCON1.SSPOV = 0b0;
+    SSPCON1.WCOL = 0b0;
+    
+    SSPCON2 = 0;         		 //reset control register 2
+    SSPADD = 0x63;       		 //set baud rate to 100KHz
+    SSPSTAT = 0;         		 //reset status register
+}
+
 void sleep(void) {
     // Turn off ADC just in case as it's capable of waking the PIC via an interrupt
     ADCON0bits.ADON = 0;
