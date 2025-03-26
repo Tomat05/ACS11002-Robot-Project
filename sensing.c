@@ -18,10 +18,10 @@ int read_adc(ushort sensor) {
 
 void read_i2c(LineSensors* sensor) {
     i2c_start();
-    i2c_write(0x7C); // Send 7b address & write to slave
+    i2c_write(0x7C); // Send 7b address + write signal to slave
     i2c_write(0x11); // Write data, select RegdataA & send to slave
     i2c_repeatStart();
-    i2c_write(0x7D); // Send 7 bit address
+    i2c_write(0x7D); // Send 7 bit address + read signal to slave
     i2c_read(sensor);
     i2c_stop();
 }

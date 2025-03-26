@@ -9,9 +9,9 @@
 
 void setup_io(void) {
     // Set I/O
-    TRISA = 0b00000000;
+    TRISA = 0b11001111;
     TRISB = 0b00000000;
-    TRISC = 0b00000000;
+    TRISC = 0b00111001;
     
     // Clear the I/O registers in case there are left-over values from the last run
     // which seems to happen sometimes without this
@@ -25,11 +25,11 @@ void setup_io(void) {
 }
 
 void setup_pwm(void) {
-    PR2 = 255; // Set period of PW
-    T2CON = 0b00000111; // Timer 2 on, Prescaler = 1
-    
-    CCP1CON = 0x0c;
-    CCP2CON = 0x0c;
+//    PR2 = 255; // Set period of PW
+//    T2CON = 0b00000111; // Timer 2 on, Prescaler = 1
+//    
+//    CCP1CON = 0x0c;
+//    CCP2CON = 0x0c;
 }
 
 void setup_adc(void) {
@@ -61,7 +61,5 @@ void sleep(void) {
      * way to prevent the programme restarting due to the PC looping back around to the start 
      * of the memory, that has the added bonus of drawing less power than an infinite loop.
     */ 
-#asm
-    SLEEP; // Send the little PIC to its comfy little bed after its hard day's work
-#endasm
+    asm("SLEEP"); // Send the little PIC to its comfy little bed after its hard day's work
 }
